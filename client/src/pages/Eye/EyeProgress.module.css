@@ -1,0 +1,200 @@
+/* 🌿 Background Overlay for Eye Progress */
+.bgOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url('../assets/eyebg2.jpg');
+  background-repeat: repeat;
+  background-size: 480px;
+  background-position: center;
+  background-blend-mode: screen;
+  background-color: rgba(183, 255, 208, 0.6);
+  opacity: 0.7;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.bgOverlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 35%, rgba(255, 255, 255, 0.08), transparent 65%);
+  pointer-events: none;
+}
+
+.eyeProgressWrapper {
+  display: flex;
+  position: relative;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  color: #1e3a2f;
+}
+
+.eyeProgressContent {
+  flex: 1;
+  padding: 3rem 2rem;
+  margin-left: 240px;
+  z-index: 1;
+  background-color: rgba(225, 255, 235, 0.6);
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #064e3b;
+}
+
+.tabButtons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.tabButtons button {
+  background-color: #dcfce7;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  color: #065f46;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.activeTab {
+  background-color: #34d399 !important;
+  color: #064e3b;
+}
+
+.tabButtons button:hover {
+  background-color: #047857;
+  color: #ffffff;
+}
+
+.chartSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem 0;
+  max-width: 1000px;
+  margin: 2rem auto;
+}
+
+.chartCard {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow-x: auto;
+}
+
+.chartCard h3 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e3a2f;
+  border-left: 4px solid #059669;
+  padding-left: 0.6rem;
+}
+
+.reportSection {
+  background-color: white;
+  color: #1e3a2f;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  margin-top: 2rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: visible;
+  page-break-after: auto;
+}
+
+.reportSectionExport {
+  background-color: white !important;
+  color: #1e3a2f !important;
+  display: block !important;
+  visibility: visible !important;
+  overflow: visible !important;
+}
+
+.userInfoBox {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  page-break-inside: avoid;
+}
+
+.reportPlaceholder {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  background-color: #f0fdf4;
+  page-break-inside: avoid;
+}
+
+.exportBtn,
+.emailBtn {
+  margin-top: 1.5rem;
+  margin-right: 1rem;
+  background-color: #059669;
+  color: white;
+  padding: 0.75rem 1.25rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  page-break-inside: avoid;
+}
+
+.exportBtn:hover {
+  background-color: #047857;
+}
+
+.emailBtn {
+  background-color: #10b981;
+}
+
+.emailBtn:hover {
+  background-color: #059669;
+}
+
+.aiAssistant {
+  background-color: #ecfdf5;
+  color: #064e3b;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+@media screen and (max-width: 768px) {
+  .eyeProgressContent {
+    margin-left: 180px;
+    padding: 2rem 1rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .chartCard,
+  .reportSection {
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,134 @@
+/* Background overlay wrapper */
+.formBgOverlay {
+  background-image: url('../../assets/dashboard/dashboardbg.png'); /* replace this path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  background-size: 500px;
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  backdrop-filter: blur(2px); /* slight blur */
+}
+
+/* Form container */
+.formContainer {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 1.5rem;
+  padding: 2.5rem 2rem;
+  max-width: 700px;
+  width: 100%;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.8s ease;
+  transition: transform 0.3s ease;
+}
+
+.formContainer:hover {
+  transform: translateY(-3px);
+}
+
+/* Heading */
+.heading {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  color: #0077cc;
+  margin-bottom: 1.2rem;
+}
+
+/* Subheading */
+.statement {
+  text-align: center;
+  font-style: italic;
+  font-size: 1rem;
+  color: #4a4a4a;
+  margin-bottom: 2rem;
+  animation: pulse 2.5s infinite;
+}
+
+/* Group container */
+.formGroup {
+  margin-bottom: 1.3rem;
+}
+
+.formGroup label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: #222;
+}
+
+.formGroup input,
+.formGroup select {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  font-size: 1rem;
+  border: 1px solid #cbd5e0;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  transition: border-color 0.3s, box-shadow 0.2s;
+}
+
+.formGroup input:focus,
+.formGroup select:focus {
+  outline: none;
+  border-color: #0077cc;
+  box-shadow: 0 0 0 3px rgba(0, 119, 204, 0.2);
+}
+
+/* Submit button */
+.submitBtn {
+  display: block;
+  width: 100%;
+  padding: 0.9rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(to right, #28a745, #218838);
+  border: none;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.submitBtn:hover {
+  background: linear-gradient(to right, #218838, #1e7e34);
+  transform: scale(1.02);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% { opacity: 0.7; }
+  50% { opacity: 1; }
+  100% { opacity: 0.7; }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .formContainer {
+    padding: 2rem 1.5rem;
+  }
+
+  .heading {
+    font-size: 1.6rem;
+  }
+
+  .statement {
+    font-size: 0.95rem;
+  }
+}

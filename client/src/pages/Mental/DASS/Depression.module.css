@@ -1,0 +1,181 @@
+.pageWrapper {
+  margin-left: 240px; /* sidebar width */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.depressionContainer {
+  background: linear-gradient(135deg, #fba7aa, #fae3d9);
+  padding: 3rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #1a1a1a;
+  z-index: 1;
+  position: relative;
+}
+
+
+.bgOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url('../../../assets/mentalbg4.jpg');
+  background-repeat: repeat;
+  background-size: 400px;
+  background-position: center;
+  background-blend-mode: screen;
+  background-color: rgba(255, 221, 157, 0.7);
+  opacity: 0.45;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.illustration {
+  width: 300px;
+  margin: 0 auto 2rem;
+  display: block;
+}
+
+.heading {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  color: #be123c;
+}
+
+.intro {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.questionCard {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 1rem;
+  padding: 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(8px);
+}
+
+.questionNumber {
+  font-weight: bold;
+  color: #991b1b;
+  margin-bottom: 0.5rem;
+}
+
+.questionText {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  color: #111827;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.option {
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  background-color: #ffffffd8;
+  transition: all 0.3s ease;
+  text-align: left;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.option:hover {
+  background-color: #fecdd3;
+  border-color: #be123c;
+}
+
+.selected {
+  background-color: #fda4af;
+  border: 2px solid #be123c;
+  font-weight: bold;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.navigation button {
+  background-color: #be123c;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.navigation button:disabled {
+  background-color: #fbcfe8;
+  cursor: not-allowed;
+}
+
+.navigation button:hover:not(:disabled) {
+  background-color: #9f1239;
+}
+
+.progress {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.dot {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin: 0 4px;
+  border-radius: 50%;
+  background-color: #ffe4e6;
+  transition: background-color 0.3s ease;
+}
+
+.active {
+  background-color: #be123c;
+}
+
+.submissionComplete {
+  background: rgba(255, 255, 255, 0.6);
+  padding: 2rem;
+  border-radius: 1rem;
+  max-width: 600px;
+  margin: 4rem auto;
+  text-align: center;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.submissionComplete h2 {
+  font-size: 2rem;
+  color: #be123c;
+  margin-bottom: 1rem;
+}
+
+.severityTag {
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.5rem;
+  background-color: #be123c;
+  color: white;
+  font-weight: 600;
+}

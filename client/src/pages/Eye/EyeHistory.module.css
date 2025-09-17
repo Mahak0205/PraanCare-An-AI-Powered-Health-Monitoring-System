@@ -1,0 +1,147 @@
+/* 🌿 Calm Green Background Overlay */
+.bgOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url('../assets/eyebg2.jpg'); /* ✅ Adjust to your asset */
+  background-repeat: repeat;
+  background-size: 480px;
+  background-position: center;
+  background-color: #052e16;
+  background-blend-mode: screen;
+  opacity: 0.7;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.bgOverlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 35%, rgba(255, 255, 255, 0.08), transparent 65%);
+  pointer-events: none;
+}
+
+/* 👁️ Eye History Page Container */
+.eyeHistoryContainer {
+  position: relative;
+  margin-left: 240px; /* Sidebar space */
+  padding: 4rem 2rem;
+  min-height: 100vh;
+  background-color: rgba(5, 46, 22, 0.85); /* Deep forest green overlay */
+  color: #e2fbe2;
+  font-family: 'Segoe UI', sans-serif;
+  z-index: auto;
+  overflow-x: auto;
+}
+
+/* 📘 Title Styling */
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #d1fae5;
+}
+
+/* ⌛ Loading & ❌ Error States */
+.status,
+.error {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-top: 2rem;
+}
+
+.error {
+  color: #f87171;
+  font-weight: 600;
+}
+
+/* ✅ Compact Action Buttons */
+.actionButtons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.btnExport,
+.btnClear {
+  padding: 0.35rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  color: white;
+  background-color: #166534;
+  transition: background-color 0.2s ease;
+}
+
+.btnExport:hover {
+  background-color: #22c55e;
+}
+
+.btnClear:hover {
+  background-color: #dc2626;
+}
+
+/* 📊 Compact Table Styling */
+.historyTable {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(5, 46, 22, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+  font-size: 0.78rem;
+}
+
+.historyTable thead {
+  background-color: rgba(20, 83, 45, 0.9);
+}
+
+.historyTable th,
+.historyTable td {
+  padding: 0.5rem 0.4rem;
+  text-align: center;
+  color: #e2fbe2;
+  border-bottom: 1px solid #14532d;
+  word-break: break-word;
+}
+
+.historyTable th {
+  font-weight: 600;
+  color: #bbf7d0;
+}
+
+.historyTable tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+/* 📱 Extra Compact on Small Screens */
+@media screen and (max-width: 768px) {
+  .eyeHistoryContainer {
+    padding: 1.5rem 1rem;
+    margin-left: 180px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .historyTable th,
+  .historyTable td {
+    padding: 0.35rem;
+    font-size: 0.7rem;
+  }
+
+  .btnExport,
+  .btnClear {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.7rem;
+  }
+}

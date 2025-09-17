@@ -1,0 +1,71 @@
+/* Navbar.css */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4rem;
+  background-color: white;
+  opacity: 0.9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1101;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #2E3A59;
+}
+
+.nav-links,
+.navbar-right {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li,
+.navbar-right li {
+  cursor: pointer;
+  color: #2E3A59;
+  transition: color 0.3s;
+}
+
+.nav-links li:hover,
+.navbar-right li:hover {
+  color: #FF6B6B;
+}
+
+.try-btn {
+  background-color: #fbfbfb;
+  color: #ff8000;
+  border-color: #ff8000;
+  border-radius: 999px;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  min-width: 90px;
+}
+
+.try-btn:hover {
+  background-color: #fa7f03;
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+}

@@ -1,0 +1,210 @@
+/* 🌌 Full-Page Nebula Background for Sleep Progress */
+.bgOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url('../assets/sleepbg3.png');
+  background-repeat: repeat;
+  background-size: 280px;
+  background-color: #0f172a;
+  background-position: center;
+  background-blend-mode: screen;
+  opacity: 0.7;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.bgOverlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 35%, rgba(255, 255, 255, 0.08), transparent 65%);
+  pointer-events: none;
+}
+
+.sleepProgressWrapper {
+  display: flex;
+  position: relative;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  color: #e2e8f0;
+}
+
+.sleepProgressContent {
+  flex: 1;
+  padding: 3rem 2rem;
+  margin-left: 240px; /* space for sidebar */
+  z-index: 1;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #f8fafc;
+}
+
+.tabButtons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.tabButtons button {
+  background-color: #334155;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  color: #f8fafc;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.activeTab {
+  background-color: #2563eb !important;
+  color: #f1f5f9;
+}
+
+.tabButtons button:hover {
+  background-color: #475569;
+}
+
+.chartGrid{
+
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: visible;
+}
+.chartGridExport {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.chartBoxWide {
+  background-color: white;
+  color: #1e293b;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.reportSection {
+  background-color: white;
+  color: #1e293b;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  margin-top: 2rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: visible;
+  page-break-after: auto;
+}
+
+.reportSectionExport {
+  background-color: white !important;
+  color: #1e293b !important;
+  display: block !important;
+  visibility: visible !important;
+  overflow: visible !important;
+}
+
+.userInfoBox {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  page-break-inside: avoid;
+}
+
+.reportPlaceholder {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  background-color: #f8fafc;
+  page-break-inside: avoid;
+}
+
+.exportBtn,
+.emailBtn {
+  margin-top: 1.5rem;
+  margin-right: 1rem;
+  background-color: #2563eb;
+  color: white;
+  padding: 0.75rem 1.25rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  page-break-inside: avoid;
+}
+
+.exportBtn:hover {
+  background-color: #1d4ed8;
+}
+
+.emailBtn {
+  background-color: #14b8a6;
+}
+
+.emailBtn:hover {
+  background-color: #0d9488;
+}
+
+.aiAssistant {
+  background-color: #f8fafc;
+  color: #1e293b;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+/* Hide export charts visually but keep them in DOM for PDF export */
+.chartGridExport {
+  display: block;
+  height: auto;
+  visibility: visible;
+  position: static;
+  overflow: visible;
+  page-break-inside: avoid;
+}
+
+@media screen and (max-width: 768px) {
+  .sleepProgressContent {
+    margin-left: 180px;
+    padding: 2rem 1rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .chartBoxWide {
+    padding: 1rem;
+  }
+
+  .reportSection {
+    padding: 1rem;
+  }
+}
+/* Inside your .module.css */
+.reportSectionExport {
+  display: block !important;
+  visibility: visible !important;
+  overflow: visible !important;
+}

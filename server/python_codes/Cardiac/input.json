@@ -1,0 +1,13 @@
+{
+  "age": 20,
+  "sex": 1,
+  "chest pain type": 0,
+  "resting bp s": 100,
+  "cholesterol": 200,
+  "fasting blood sugar": 1,
+  "resting ecg": 1,
+  "max heart rate": 90,
+  "exercise angina": 1,
+  "oldpeak": 1,
+  "ST slope": 0
+}

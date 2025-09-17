@@ -1,0 +1,178 @@
+/* src/pages/Dashboard.module.css */
+
+/* 🌟 Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseWave {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 18px rgba(255, 255, 255, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* 🌿 Full Page Background */
+.wrapper {
+  min-height: 100vh;
+  width: 100vw;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(120deg, #fefefe, #f9f9f9);
+  background-image: url('../assets/dashboard/dashboardbg.png');
+  background-size: 600px;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  overflow-x: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding: 3rem 2rem;
+}
+
+/* 🧊 Glass Container */
+.dashboardContainer {
+  max-width: 1200px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.55);
+  border-radius: 1.5rem;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  animation: fadeInUp 1s ease-in;
+}
+
+/* 💫 Icon Strip */
+.iconStrip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  padding: 1.5rem 0;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.glowIcon {
+  font-size: 2.8rem;
+  animation: pulseWave 3s infinite ease-in-out, pulseGlow 2.5s infinite ease-in-out;
+  border-radius: 50%;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(4px);
+  filter: drop-shadow(0 0 6px #fff) drop-shadow(0 0 12px currentColor);
+}
+
+.cardiacIcon {
+  color: #ef4444;
+}
+.sleepIcon {
+  color: #60a5fa;
+}
+.mentalIcon {
+  color: #fca5a5;
+}
+.eyeIcon {
+  color: #22c55e;
+}
+
+/* 👋 Greeting */
+.dashboardHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #1f2937;
+}
+
+.dashboardHeader h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.dashboardHeader p {
+  font-size: 1.2rem;
+  color: #6b7280;
+}
+
+.dashboardHeader small {
+  font-size: 0.95rem;
+  color: #9ca3af;
+}
+
+/* 🩺 Health Card Grid */
+.healthGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  width: 100%;
+  margin-bottom: 3rem;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+/* 🌱 Wellness Tip */
+.dashboardTip {
+  background: linear-gradient(to right, #fef3c7, #e0f2fe);
+  padding: 1.75rem;
+  border-radius: 1.25rem;
+  text-align: center;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: #1f2937;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+  animation: fadeInUp 1.2s ease-in-out;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .iconStrip {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .dashboardHeader h2 {
+    font-size: 2rem;
+  }
+
+  .healthGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboardContainer {
+    padding: 2rem 1rem;
+  }
+
+  .wrapper {
+    padding: 2rem 1rem;
+  }
+}

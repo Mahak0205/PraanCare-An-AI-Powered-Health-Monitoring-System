@@ -1,0 +1,126 @@
+/* Fullscreen Background Wrapper */
+.formBgOverlay {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-image: url('../assets/dashboard/dashboardbg.png');
+  background-repeat: repeat;
+  background-size: 500px;
+  background-position: center;
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Signup Container */
+.authBox {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 40px 30px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+/* Heading */
+.heading {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+/* Form Layout */
+.signupForm {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Input Fields */
+.inputField {
+  width: 100%;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+  font-size: 15px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.inputField:focus {
+  border-color: #ffa200;
+  box-shadow: 0 0 8px rgba(255, 162, 0, 0.4);
+}
+
+/* Error Message */
+.errorText {
+  color: crimson;
+  font-size: 12px;
+  margin-top: -6px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Submit Button */
+.signupBtn {
+  width: 100%;
+  padding: 12px 14px;
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  background: #ffa200;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(108, 99, 255, 0.4);
+}
+
+.signupBtn:hover {
+  background: #ff9900;
+  box-shadow: 0 6px 14px rgba(108, 99, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Login Prompt */
+.loginPrompt {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #333;
+  text-align: center;
+}
+
+/* Login Redirect Button */
+.loginBtn {
+  background: none;
+  border: none;
+  color: #f59e0b;
+  margin-left: 6px;
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: 500;
+  font-size: medium;
+}
+
+.loginBtn:hover {
+  color: #d97706;
+}

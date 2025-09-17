@@ -1,0 +1,200 @@
+/* ❤️ Background Overlay for Cardiac Progress */
+.bgOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url('../assets/cardiacbg4.jpg');
+  background-repeat: repeat;
+  background-size: 480px;
+  background-position: center;
+  background-blend-mode: screen;
+  background-color: rgba(255, 204, 204, 0.6);
+  opacity: 0.7;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.bgOverlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 35%, rgba(255, 255, 255, 0.08), transparent 65%);
+  pointer-events: none;
+}
+
+.cardiacProgressWrapper {
+  display: flex;
+  position: relative;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  color: #3b0d0c;
+}
+
+.cardiacProgressContent {
+  flex: 1;
+  padding: 3rem 2rem;
+  margin-left: 240px;
+  z-index: 1;
+  background-color: rgba(255, 235, 235, 0.6);
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #7f1d1d;
+}
+
+.tabButtons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.tabButtons button {
+  background-color: #fee2e2;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  color: #991b1b;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.activeTab {
+  background-color: #f87171 !important;
+  color: #7f1d1d;
+}
+
+.tabButtons button:hover {
+  background-color: #991b1b;
+  color: #ffffff;
+}
+
+.chartSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem 0;
+  max-width: 1000px;
+  margin: 2rem auto;
+}
+
+.chartCard {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow-x: auto;
+}
+
+.chartCard h3 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #3b0d0c;
+  border-left: 4px solid #dc2626;
+  padding-left: 0.6rem;
+}
+
+.reportSection {
+  background-color: white;
+  color: #3b0d0c;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  margin-top: 2rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: visible;
+  page-break-after: auto;
+}
+
+.reportSectionExport {
+  background-color: white !important;
+  color: #3b0d0c !important;
+  display: block !important;
+  visibility: visible !important;
+  overflow: visible !important;
+}
+
+.userInfoBox {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  page-break-inside: avoid;
+}
+
+.reportPlaceholder {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border: 1px solid #fca5a5;
+  border-radius: 0.75rem;
+  background-color: #fef2f2;
+  page-break-inside: avoid;
+}
+
+.exportBtn,
+.emailBtn {
+  margin-top: 1.5rem;
+  margin-right: 1rem;
+  background-color: #dc2626;
+  color: white;
+  padding: 0.75rem 1.25rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  page-break-inside: avoid;
+}
+
+.exportBtn:hover {
+  background-color: #b91c1c;
+}
+
+.emailBtn {
+  background-color: #f87171;
+}
+
+.emailBtn:hover {
+  background-color: #dc2626;
+}
+
+.aiAssistant {
+  background-color: #fff1f2;
+  color: #7f1d1d;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+@media screen and (max-width: 768px) {
+  .cardiacProgressContent {
+    margin-left: 180px;
+    padding: 2rem 1rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .chartCard,
+  .reportSection {
+    padding: 1rem;
+  }
+}

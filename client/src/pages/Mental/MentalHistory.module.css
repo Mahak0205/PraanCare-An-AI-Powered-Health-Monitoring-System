@@ -1,0 +1,217 @@
+
+.bgOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url('../assets/mentalbg4.jpg');
+  background-repeat: repeat;
+  background-size: 700px;
+  background-position: center;
+  background-blend-mode: screen;
+  background-color: rgba(255, 221, 157, 0.70);
+  opacity: 0.7;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.bgOverlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 35%, rgba(255, 255, 255, 0.08), transparent 65%);
+  pointer-events: none;
+}
+
+.mentalHistorycontainer {
+  position: relative;
+  margin-left: 240px; /* Sidebar space */
+  padding: 4rem 2rem;
+  min-height: 100vh;
+  color: #33373B;
+  background-color: rgb(255, 221, 157, 0.08);
+  font-family: 'Segoe UI', sans-serif;
+  z-index: auto;
+  overflow-x: auto;
+}
+
+.pageTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #33373B;
+}
+
+/* Table Section */
+.tableSection {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 4rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 18px rgba(224, 195, 252, 0.3);
+  overflow: hidden;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 1rem 1.5rem;
+  color: #33373B;
+  background: linear-gradient(135deg, #fba7aa, #FAE3D9); /* fallback */
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Correct colors for each section */
+.depression {
+  background: linear-gradient(135deg, #8ce7fe, #FAE3D9); /* light blue */
+}
+
+.anxiety {
+  background: linear-gradient(135deg, #98fee6, #FAE3D9); /* mint green */
+}
+
+.stress {
+  background: linear-gradient(135deg, #fba7aa, #FAE3D9); /* soft pink-red */
+}
+
+
+/* Table */
+.historyTable {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff; /* solid white */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04); /* subtle shadow for definition */
+}
+
+.historyTable th,
+.historyTable td {
+  padding: 1rem 1.2rem;
+  text-align: left;
+  font-size: 0.95rem;
+  border-bottom: 1px solid #eee;
+  background: #fff;
+  opacity: 1;
+}
+
+.historyTable th {
+  background-color: #fef3ec;
+  font-weight: 600;
+  color: #444;
+  opacity: 1;
+}
+
+.historyTable tr:hover {
+  background-color: #fafafa;
+  transition: background-color 0.3s ease;
+}
+
+/* Result Tags */
+.tag {
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-block;
+  text-transform: capitalize;
+
+}
+
+/* Severity Colors */
+.normal {
+  background-color: #BBDED6;
+  color: #064e3b;
+}
+
+.mild {
+  background-color: #8AC6D1;
+  color: #1e293b;
+}
+
+.moderate {
+  background-color: #F6AD55;
+  color: #7b341e;
+}
+
+.severe {
+  background-color: #FF6B6B;
+  color: white;
+}
+
+.extremely {
+  background-color: #B83280;
+  color: white;
+}
+
+/* Utility */
+.noData {
+  font-size: 0.95rem;
+  color: #888;
+  padding: 1rem 1.5rem;
+  background: #fdf6f2;
+}
+
+.loading {
+  margin-left: 240px;
+  padding: 4rem;
+  font-size: 1.3rem;
+  text-align: center;
+  color: #555;
+}
+
+/* Background Image */
+.container::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../assets/mentalbg.jpg"); /* adjust path as needed */
+  background-size: cover;
+  background-position: center;
+  opacity: 0.08; /* or your preferred overlay */
+  z-index: 0;
+  pointer-events: none;
+}
+.actionButtons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin: 2rem 0 1rem;
+  flex-wrap: wrap;
+}
+
+.btnExport,
+.btnClear {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.btnExport {
+  background-color: #f4b860; /* Light orange/beige */
+  color: #4b2e1e;
+}
+
+.btnExport:hover {
+  background-color: #f0a94c;
+  color: #3d2215;
+}
+
+.btnClear {
+  background-color: #f08a5d; /* Warm coral */
+  color: #fff2e3;
+}
+
+.btnClear:hover {
+  background-color: #d76a3c;
+  color: #ffffff;
+}

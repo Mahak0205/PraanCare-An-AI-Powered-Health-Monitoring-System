@@ -1,0 +1,172 @@
+/* 🔴 Soft Background Overlay */
+.bgOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../assets/cardiacbg4.jpg');
+  background-repeat: repeat;
+  background-size: 600px;
+  background-position: center;
+  background-color: rgba(255, 215, 215, 0.6); /* Soft blush */
+  background-blend-mode: screen;
+  opacity: 0.6;
+  z-index: -2;
+  pointer-events: none;
+}
+
+.bgOverlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 35%, rgba(255, 255, 255, 0.08), transparent 65%);
+  pointer-events: none;
+}
+
+/* 🔲 Page Container */
+.cardiacHistoryContainer {
+  position: relative;
+  margin-left: 240px; /* leave room for sidebar */
+  padding: 3rem 2rem;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  color: #2c2c2c;
+  background-color: rgba(249, 81, 81, 0.6); /* transparent red behind table */
+  z-index: 1;
+  overflow-x: auto;
+  max-width: calc(100vw - 260px);
+  box-sizing: border-box;
+}
+
+/* 🩺 Page Title */
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: #670000; /* warm muted red */
+}
+
+/* ⏳ Status / Error */
+.status,
+.error {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-top: 2rem;
+}
+
+.error {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+/* 🧾 Action Buttons */
+.actionButtons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.btnExport,
+.btnClear {
+  padding: 0.5rem 1.1rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.btnExport {
+  background-color: #fca5a5;
+  color: rgb(0, 0, 0);
+}
+
+.btnExport:hover {
+  background-color: #580000;
+  color: white;
+}
+
+.btnClear {
+  background-color: #fca5a5;
+  color: #581c1c;
+}
+
+.btnClear:hover {
+  background-color: #580000;
+  color: white;
+}
+
+/* 📊 Enhanced Table Styling */
+.historyTable {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: rgba(255, 248, 248, 0.94); /* Light blush white */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+  font-size: 0.88rem;
+  z-index: 1;
+}
+
+/* Table Header */
+.historyTable thead th {
+  background-color: #ffe4e6; /* Soft blush-pink */
+  color: #b91c1c;
+  font-weight: 600;
+  padding: 0.9rem 1rem;
+  border-bottom: 2px solid #fca5a5;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Table Body */
+.historyTable tbody td {
+  padding: 0.85rem 1rem;
+  text-align: center;
+  color: #3b3b3b;
+  background: #fffafa;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+/* Zebra Stripes for Rows */
+.historyTable tbody tr:nth-child(odd) {
+  background-color: #fff1f2;
+}
+
+.historyTable tbody tr:hover {
+  background-color: #ffe4e6;
+  transition: background-color 0.25s ease-in-out;
+}
+
+/* Rounded Corners */
+.historyTable thead th:first-child {
+  border-top-left-radius: 12px;
+}
+
+.historyTable thead th:last-child {
+  border-top-right-radius: 12px;
+}
+
+.historyTable tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 12px;
+}
+
+.historyTable tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 12px;
+}
+
+/* Scroll Container (if needed) */
+.tableWrapper {
+  overflow-x: auto;
+  border-radius: 12px;
+}

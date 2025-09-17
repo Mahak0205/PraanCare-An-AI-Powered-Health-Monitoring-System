@@ -1,0 +1,309 @@
+/* src/pages/HomePage.module.css */
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  }
+}
+
+@keyframes scrollIcons {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
+.homeContainer {
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffffff;
+  color: #1f2937;
+  animation: fadeIn 1s ease-in;
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Animated Icon Row */
+.iconScroller {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  padding: 2rem;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+.glowIcon {
+  width: 60px;
+  height: 60px;
+  animation: pulseGlow 2s infinite;
+  filter: drop-shadow(0 0 6px #fff) drop-shadow(0 0 10px currentColor);
+}
+
+.mentalIcon {
+  color: #fca5a5;
+}
+
+.cardiacIcon {
+  color: #ef4444;
+}
+
+.eyeIcon {
+  color: #22c55e;
+}
+
+.sleepIcon {
+  color: #60a5fa;
+}
+
+/* Hero Section */
+.heroSection {
+  padding: 5rem 2rem 3rem;
+  text-align: center;
+  background: linear-gradient(135deg, #fff1eb 0%, #fdfcfb 100%);
+  animation: fadeInUp 1.2s ease-out;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.ctaButtons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.primaryButton {
+  background-color: #f97316;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.primaryButton:hover {
+  background-color: #ea580c;
+}
+
+.secondaryButton {
+  background-color: transparent;
+  border: 2px solid #f97316;
+  color: #f97316;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s, color 0.3s;
+}
+
+.secondaryButton:hover {
+  background-color: #f97316;
+  color: white;
+}
+
+/* Features Section */
+.featuresSection {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  padding: 4rem 2rem;
+  background-color: #ffffff;
+  animation: fadeInUp 1.5s ease-out;
+}
+
+.featureCard {
+  background: #ffffff;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s;
+  animation: zoomIn 0.8s ease forwards;
+}
+
+.featureCard:hover {
+  transform: translateY(-5px);
+}
+
+.featureCard h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.featureCard p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.learnMore {
+  text-decoration: none;
+  color: #10b981;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.learnMore:hover {
+  text-decoration: underline;
+}
+
+/* Vision Section */
+.visionSection {
+  padding: 4rem 2rem;
+  background: #fefce8;
+  text-align: center;
+}
+
+.visionSection h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.visionSection p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* Testimonials Section */
+.testimonialsSection {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #f0fdf4, #e0f2fe);
+  text-align: center;
+  animation: fadeIn 1.2s ease-in;
+}
+
+.testimonialsSection h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.testimonialCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.testimonialCard {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  animation: fadeInUp 1.3s ease-out;
+}
+
+.quote {
+  font-style: italic;
+  margin-bottom: 0.75rem;
+}
+
+.user {
+  font-weight: 500;
+  color: #6b7280;
+}
+
+/* CTA Section */
+.ctaSection {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: #fff7ed;
+  animation: fadeInUp 1.4s ease-out;
+}
+
+.ctaSection h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Contact Section */
+.contactSection {
+  padding: 4rem 2rem;
+  background: #f0fdf4;
+  text-align: center;
+}
+
+.contactSection h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.contactSection p {
+  margin-bottom: 0.5rem;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: #f3f4f6;
+  font-size: 0.9rem;
+  color: #4b5563;
+  animation: fadeIn 2s ease-in;
+}
+
+.footerLinks {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.footerLinks a {
+  color: #4b5563;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footerLinks a:hover {
+  text-decoration: underline;
+  color: #1f2937;
+}

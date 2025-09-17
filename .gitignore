@@ -1,0 +1,42 @@
+# Node dependencies
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Logs
+logs
+*.log
+
+# Environment variables
+.env
+client/.env
+server/.env
+
+# Build outputs
+dist/
+build/
+
+# OS/system files
+.DS_Store
+Thumbs.db
+
+server/python_codes/Mental/*.pkl
+
+server/python_codes/Sleep/*.pkl
+
+server/python_codes/Eye/*.pkl
+
+server/python_codes/Cardiac/*.pkl
+
+
+# python cache
+__pycache__/
+*.pyc
+
+# Python virtual environments
+venv/
+.venv/
+server/python_codes/venv/
+
+#ignore python file
+server/python_codes/chatbot.py

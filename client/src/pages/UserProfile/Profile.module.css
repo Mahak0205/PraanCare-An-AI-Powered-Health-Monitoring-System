@@ -1,0 +1,147 @@
+/* Full-screen container with subtle background */
+.container {
+  min-height: 100dvh;
+  padding: 2rem;
+  background: url('../../assets/dashboard/dashboardbg.png') repeat center center fixed;
+  background-size: 500px;
+  font-family: 'Segoe UI', sans-serif;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  box-sizing: border-box;
+}
+
+
+/* Profile Card */
+.card {
+  width: 100%;
+  max-width: 720px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2.5rem 3rem;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Header */
+.heading {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #3b3b3b;
+}
+
+/* Profile Picture */
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #f98500; 
+  display: block;
+  margin: 0 auto 1rem auto;
+}
+.patientId {
+  background-color: #fff8ee;
+  border-left: 4px solid #f98500;
+  color: #333;
+  padding: 0.75rem 1rem;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  text-align: center;
+
+  /* Ensures it's centered */
+  display: block;
+  width: fit-content;
+  margin: 1rem auto;
+}
+
+
+/* Section Styling */
+.section {
+  margin-bottom: 1.8rem;
+  border-bottom: 1px solid #ddd6fe; /* very light purple */
+  padding-bottom: 1rem;
+}
+
+.section h3 {
+  color: #a04d00;
+  font-size: 1.2rem;
+  margin-bottom: 0.6rem;
+  font-weight: 600;
+}
+
+.section p {
+  margin: 6px 0;
+  font-size: 0.96rem;
+  color: #374151;
+}
+
+.section p strong {
+  color: #c05f05;
+  margin-right: 6px;
+}
+
+/* Edit Button */
+.editWrapper {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.editButton {
+  padding: 12px 28px;
+  background: linear-gradient(135deg, #f67f00, #ffb854);
+  color: #ffffff;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 6px 14px rgba(168, 139, 250, 0.35);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.editButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(247, 136, 0, 0.5);
+}
+.retakeButton {
+  background-color: #ffd5a8;
+  color: #c05f05;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.2s ease;
+}
+
+.retakeButton:hover {
+  background-color: #feeac7;
+  transform: scale(1.03);
+}
+
+.backButton {
+  background-color: #ffd5a8;
+  color: #c05f05;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 10px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.backButton:hover {
+  background-color: #ffc489;
+  transform: scale(1.03);
+}
