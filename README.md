@@ -320,17 +320,6 @@ Users are advised to consult qualified healthcare professionals for medical conc
 
 ---
 
-# 📷 Screenshots
-
-_Add screenshots of:_
-- Login Page
-- Dashboard
-- Prediction Modules
-- Progress Tracker
-- AI Reports
-
----
-
 # 🌟 Acknowledgements
 
 - TensorFlow
