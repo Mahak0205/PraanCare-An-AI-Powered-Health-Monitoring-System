@@ -1,5 +1,6 @@
 # Node dependencies
 node_modules/
+structure.txt
 client/node_modules/
 server/node_modules/
 
@@ -40,3 +41,4 @@ server/python_codes/venv/
 
 #ignore python file
 server/python_codes/chatbot.py
+server/python_codes/PY.txt

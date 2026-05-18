@@ -5,13 +5,17 @@ const SleepData = require("../models/SleepPatient");
 const DepressionData = require("../models/DepressionPatient");
 const AnxietyData = require("../models/AnxietyPatient");
 const StressData = require("../models/StressPatient");
-const EyeData = require("../models/EyePatient"); 
+const EyeData = require("../models/EyePatient");
 const CardiacData = require("../models/CardiacPatient");
 
 // 🧠 Spawn Python Groq Assistant Script
 const runAssistantPython = ({ message, context, prompt }) => {
   return new Promise((resolve, reject) => {
-    const py = spawn("python", ["./python_codes/assistant.py"]);
+    const pythonPath = path.resolve(__dirname, "..", "python_codes", "venv", "Scripts", "python.exe");
+    const assistantPath = path.resolve(__dirname, "..", "python_codes", "assistant.py");
+    const py = spawn(pythonPath, [assistantPath], {
+      cwd: path.resolve(__dirname, ".."),
+    });
 
     const input = JSON.stringify({ message, context, prompt });
     let result = "";
@@ -127,7 +131,6 @@ Instructions:
 Respond only with 4 bullet points. No introduction, no conclusion, no extra text.
 `;
 
-
       context = {
         history: finalHistory,
       };
@@ -152,13 +155,12 @@ Guidelines:
       };
     }
     console.log("🧠 MENTAL ASSISTANT REQUEST");
-console.log("🆔 Patient ID:", patientId);
-console.log("📨 Type:", type);
-console.log("💬 Message:", message);
-console.log("🧾 Final History:", finalHistory);
-console.log("📄 Prompt Preview:\n", prompt);
-console.log("🧠 Context Sent:", context);
-
+    console.log("🆔 Patient ID:", patientId);
+    console.log("📨 Type:", type);
+    console.log("💬 Message:", message);
+    console.log("🧾 Final History:", finalHistory);
+    console.log("📄 Prompt Preview:\n", prompt);
+    console.log("🧠 Context Sent:", context);
 
     const response = await runAssistantPython({ message, context, prompt });
     res.json({ message: response });
@@ -209,12 +211,15 @@ exports.sleepAssistant = async (req, res) => {
     }
 
     console.log(`📊 Fetched ${sleepRecords.length} sleep records.`);
-    console.log("🗂️ Records:", sleepRecords.map((r) => ({
-      createdAt: r.createdAt,
-      prediction: r.prediction,
-      quality: r.qualityOfSleep,
-      duration: r.sleepDuration
-    })));
+    console.log(
+      "🗂️ Records:",
+      sleepRecords.map((r) => ({
+        createdAt: r.createdAt,
+        prediction: r.prediction,
+        quality: r.qualityOfSleep,
+        duration: r.sleepDuration,
+      })),
+    );
 
     const formattedHistory = sleepRecords.map((entry) => ({
       date: new Date(entry.createdAt).toLocaleDateString("en-IN"),
@@ -283,10 +288,11 @@ Rules:
 
     console.log("✅ Assistant response received.");
     res.json({ message: response });
-
   } catch (err) {
     console.error("💤 Sleep Assistant Error:", err);
-    res.status(500).json({ error: "Failed to process sleep assistant request." });
+    res
+      .status(500)
+      .json({ error: "Failed to process sleep assistant request." });
   }
 };
 
@@ -312,7 +318,8 @@ exports.eyeAssistant = async (req, res) => {
 
     const formattedHistory = eyeRecords.map((entry) => ({
       date: new Date(entry.createdAt).toLocaleDateString("en-IN"),
-      prediction: entry.prediction === "1" ? "Dry eye likely" : "Dry eye unlikely",
+      prediction:
+        entry.prediction === "1" ? "Dry eye likely" : "Dry eye unlikely",
       probability: `${Math.round(Number(entry.probability) * 100)}%`,
       screenTime: entry.screenTime,
       eyeStrain: entry.eyeStrain,
@@ -395,14 +402,21 @@ exports.cardiacAssistant = async (req, res) => {
       .limit(5);
 
     // Map enums to readable values
-    const formatChestPain = (v) => ["Typical Angina", "Atypical Angina", "Non-anginal Pain", "Asymptomatic"][v] || "Unknown";
-    const formatRestingECG = (v) => ["Normal", "ST-T Wave Abnormality", "Left Ventricular Hypertrophy"][v] || "Unknown";
-    const formatSlope = (v) => ["Upsloping", "Flat", "Downsloping"][v] || "Unknown";
+    const formatChestPain = (v) =>
+      ["Typical Angina", "Atypical Angina", "Non-anginal Pain", "Asymptomatic"][
+        v
+      ] || "Unknown";
+    const formatRestingECG = (v) =>
+      ["Normal", "ST-T Wave Abnormality", "Left Ventricular Hypertrophy"][v] ||
+      "Unknown";
+    const formatSlope = (v) =>
+      ["Upsloping", "Flat", "Downsloping"][v] || "Unknown";
     const formatBinary = (v) => (v === 1 ? "Yes" : "No");
 
     const formattedHistory = records.map((entry) => ({
       date: new Date(entry.createdAt).toLocaleDateString("en-IN"),
-      prediction: entry.prediction === "1" ? "Cardiac issue likely" : "Less likely",
+      prediction:
+        entry.prediction === "1" ? "Cardiac issue likely" : "Less likely",
       confidence: `${Math.round(Number(entry.probability) * 100)}%`,
       restingBP: entry.restingBP,
       cholesterol: entry.cholesterol,
@@ -466,6 +480,8 @@ Use the patient's previous data to answer as informatively as possible.
     res.json({ message: response });
   } catch (err) {
     console.error("❌ Cardiac Assistant Error:", err);
-    res.status(500).json({ error: "Failed to process cardiac assistant request." });
+    res
+      .status(500)
+      .json({ error: "Failed to process cardiac assistant request." });
   }
 };

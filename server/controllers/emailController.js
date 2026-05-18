@@ -1,7 +1,5 @@
 const nodemailer = require("nodemailer");
 const { fetchUserInfoByPatientId } = require("../services/userService");
-const email = process.env.SUPPORT_EMAIL; // instead of hardcoded email
-
 
 exports.sendSleepReportByEmail = async (req, res) => {
   console.log("📩 Email report route hit!", req.params);
@@ -40,7 +38,7 @@ exports.sendSleepReportByEmail = async (req, res) => {
     });
 
     const info = await transporter.sendMail({
-      from: `"PraanCare Reports" <email>`,
+      from: `"PraanCare Reports" <${process.env.SUPPORT_EMAIL}>`,
       to: user.email,
       subject: "Your Sleep Health Report",
       text: `Hello ${user.name},\n\nAttached is your sleep report as requested.\n\nRegards,\nPraanCare Team`,
@@ -98,7 +96,7 @@ exports.sendMentalReportByEmail = async (req, res) => {
     });
 
     const info = await transporter.sendMail({
-      from: `"PraanCare Reports" <email>`,
+      from: `"PraanCare Reports" <${process.env.SUPPORT_EMAIL}>`,
       to: user.email,
       subject: "Your Mental Health Report",
       text: `Hello ${user.name},\n\nAttached is your mental health report as requested.\n\nTake care,\nPraanCare Team`,
@@ -156,7 +154,7 @@ exports.sendEyeReportByEmail = async (req, res) => {
     });
 
     const info = await transporter.sendMail({
-      from: `"PraanCare Reports" <email>`,
+      from: `"PraanCare Reports" <${process.env.SUPPORT_EMAIL}>`,
       to: user.email,
       subject: "Your Eye Health Report",
       text: `Hello ${user.name},\n\nAttached is your eye health report as requested.\n\nTake care,\nPraanCare Team`,
@@ -214,7 +212,7 @@ exports.sendCardiacReportByEmail = async (req, res) => {
     });
 
     const info = await transporter.sendMail({
-      from: `"PraanCare Reports" <email>`,
+      from: `"PraanCare Reports" <${process.env.SUPPORT_EMAIL}>`,
       to: user.email,
       subject: "Your Cardiac Health Report",
       text: `Hello ${user.name},\n\nAttached is your cardiac health report as requested.\n\nStay heart-healthy,\nPraanCare Team`,
